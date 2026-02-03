@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lavelle Ali</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/966c33780b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "LkCCwhVRUMJg-Xgap",
+      });
+   })();
+</script>
+  </head>
+  <body>
+
+
+    <!-- 
+
+    Landing Page
+    
+    -->
+    <section id="landing-page" onmousemove="moveBackground(event)">
+      <!-- Navigation Bar -->
+      <nav>
+        <figure>
+          <img
+            id="personal-logo"
+            src="./Tutorial Exclusive Eportfolio/assets/Lavelle Ali logo.png"
+            alt=""
+          />
+        </figure>
+        <ul class="nav__link-list">
+          <li class="nav__link click" onclick="toggleModal()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+            >
+              About
+            </a>
+          </li>
+          <li class="nav__link">
+            <a
+              href="#projects"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+            >
+              Projects
+            </a>
+          </li>
+          <li class="nav__link" onclick="toggleModal()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+            >
+              Contact
+            </a>
+          </li>
+          <li class="nav__link click" onclick="toggleContrast()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black click" 
+            >
+              <i class="fa-solid fa-circle-half-stroke fa-spin"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="title">What's up</h1>
+          <h1 class="title--secondary">
+            <span class="blue">I'm Lavelle</span>
+          </h1>
+          <p class="header__para">
+            I'm a <span class="blue">Frontend Software Engineer</span> with a
+            strong passion <br />
+            for building web applications with a great user experience.
+            <br />
+            Here's a bit more <span class="blue click" onclick="toggleModal()">about me.</span>
+          </p>
+          <div class="social__list">
+            <a
+              class="social__icon click"
+              href="https://github.com/"
+              target="_blank"
+            >
+              <i class="fa-brands fa-github fa-beat-fade fa-lg">
+              </i>
+            </a>
+            <a class="social__icon click" href="#">
+              <i class="fa-brands fa-instagram fa-beat-fade fa-lg">
+              </i>
+            </a>
+            <a
+              class="social__icon click"
+              href="https://www.google.com"
+              target="_blank"
+            >
+              <i class="fa-brands fa-google fa-beat-fade fa-lg">
+              </i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()">
+          <i
+            class="fa-regular fa-envelope fa-beat-fade"
+            style="color: #1a6af4"
+          ></i>
+        </button>
+      </a>
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+      </a>
+
+      
+          <!--       Modal       -->
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__about--title">
+            Heres a bit <span class="blue" onclick="toggleModal()">about me</span>
+          </h3>
+          <h4 class="modal__about--sub-title">
+            Frontend Software Engineer
+          </h4>
+          <p class="modal__about--para">
+            I'm a 35 year-old <span class="blue">frontend software engineer</span> with a strong passion 
+            for developing websites with great <span class="blue">user experiences.</span>
+            <br>
+            In this portion of the paragraph tell employers how you can add value to their business.
+            </p>
+            <div class="modal__languages">
+              <figure class="modal__language">
+                <img class="modal_lang--img" src="./Tutorial Exclusive Eportfolio/assets/html5.gif" alt="">
+              <span class="lang__name">HTML</span>  
+              </figure>
+              <figure class="modal__language">
+                <img class="modal_lang--img" src="./Tutorial Exclusive Eportfolio/assets/html5.gif" alt="">
+              <span class="lang__name">HTML</span>  
+              </figure>
+              <figure class="modal__language">
+                <img class="modal_lang--img" src="./Tutorial Exclusive Eportfolio/assets/html5.gif" alt="">
+              <span class="lang__name">HTML</span>  
+              </figure>
+              <figure class="modal__language">
+                <img class="modal_lang--img" src="./Tutorial Exclusive Eportfolio/assets/html5.gif" alt="">
+              <span class="lang__name">HTML</span>  
+              </figure>
+            </div>
+        </div>
+        <div class="modal__half modal__contact">
+          <i class="fas fa-times click modal__exit" onclick="toggleModal()"></i>
+          <h3 class="modal__title modal__title--contact">
+            Let's have a chat
+          </h3>
+          <h4 class="modal__sub-title modal__contact--sub-title">
+            I'm currently open to new opprotunities
+          </h4>
+          <form id="contact__form" onsubmit="contact(event)">
+            <div class="form__item">
+              <label class="form__item--label" >Name</label>
+              <input class="input" type="text" name="user_name" required></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label" ">Email</label>
+              <input class="input" type="email" name="user_email" required></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea class="input" type="text" name="message" required></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">
+              Send it my way
+            </button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message!! Looking forward to speaking with you soon!!
+          </div>
+        </div>
+        <!-- <i class="fas fa-times click modal__exit "></i> -->
+      </div>
+      <img src="./Tutorial Exclusive Eportfolio/assets/semi circle.svg" class="shape shape--0">
+      <img src="./Tutorial Exclusive Eportfolio/assets/circle.svg" class="shape shape--1">
+      <img src="./Tutorial Exclusive Eportfolio/assets/squiggly.svg" class="shape shape--2">
+      <img src="./Tutorial Exclusive Eportfolio/assets/circle.svg" class="shape shape--3">
+      <img src="./Tutorial Exclusive Eportfolio/assets/triangle.svg" class="shape shape--4">
+      <img src="./Tutorial Exclusive Eportfolio/assets/circle.svg" class="shape shape--5">
+      <img src="./Tutorial Exclusive Eportfolio/assets/squiggly.svg" class="shape shape--6">
+      <img src="./Tutorial Exclusive Eportfolio/assets/circle.svg" class="shape shape--7">
+      <img src="./Tutorial Exclusive Eportfolio/assets/circle.svg" class="shape shape--8">
+    </section>
+    
+
+    <!-- 
+    
+    Section: Projects
+
+
+    -->
+
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="project__title">
+            Here are some of my <span class="blue">Projects</span>
+          </h1>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  class="project__img"
+                  src="./Tutorial Exclusive Eportfolio/assets/blinker mockup.png"
+                  alt=""
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Car Sales Projects
+                  </h3>
+                  <h4 class="projects__description--sub-title">
+                    HTML, CSS, JAVASCRIPT
+                  </h4>
+                  <p class="projeect_description--para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quibusdam hic veniam laboriosam nesciunt corporis repellat
+                    ipsum voluptates reiciendis harum. Animi.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="#" class="project__description--link">
+                      <i
+                        class="fa-brands fa-github fa-beat-fade fa-lg"
+                        style="color: #2769d3"
+                      ></i>
+                    </a>
+                    <a href="#" class="project__description--link">
+                      <i class="fas fa-link" style="color: #2769d3"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  class="project__img"
+                  src="./Tutorial Exclusive Eportfolio/assets/blinker mockup.png"
+                  alt=""
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Car Sales Projects
+                  </h3>
+                  <h4 class="projects__description--sub-title">
+                    HTML, CSS, JAVASCRIPT
+                  </h4>
+                  <p class="projeect_description--para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quibusdam hic veniam laboriosam nesciunt corporis repellat
+                    ipsum voluptates reiciendis harum. Animi.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="#" class="project__description--link">
+                      <i
+                        class="fa-brands fa-github fa-beat-fade fa-lg"
+                        style="color: #2769d3"
+                      ></i>
+                    </a>
+                    <a href="#" class="project__description--link">
+                      <i class="fas fa-link" style="color: #2769d3"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  class="project__img"
+                  src="./Tutorial Exclusive Eportfolio/assets/blinker mockup.png"
+                  alt=""
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Car Sales Projects
+                  </h3>
+                  <h4 class="projects__description--sub-title">
+                    HTML, CSS, JAVASCRIPT
+                  </h4>
+                  <p class="projeect_description--para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quibusdam hic veniam laboriosam nesciunt corporis repellat
+                    ipsum voluptates reiciendis harum. Animi.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="#" class="project__description--link">
+                      <i
+                        class="fa-brands fa-github fa-beat-fade fa-lg"
+                        style="color: #2769d3"
+                      ></i>
+                    </a>
+                    <a href="#" class="project__description--link">
+                      <i class="fas fa-link" style="color: #2769d3"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row footer__row">
+          <figure>
+            <img class="footer__logo--img" src="./Tutorial Exclusive Eportfolio/assets/Lavelle Ali logo.png" alt="" />
+          </figure>
+          <div class="footer__social--list">
+            <a
+              href="https://github.com/dashboard" target="_blank"
+              class="footer__social--link
+              link__hoover-effect
+              link__hoover-effect-white">
+              Github
+            </a>
+            <a
+              href="#"
+              class="footer__social--link
+              link__hoover-effect
+              link__hoover-effect-white">
+              LinkedIn
+            </a>
+            <a
+              href="#"
+              class="footer__social--link
+              link__hoover-effect
+              link__hoover-effect-white" onclick="toggleModal()">
+              Contact
+            </a>
+            <a
+              href="./Tutorial Exclusive Eportfolio/assets/Lavelle Ali Resume Renewable Energies.pages" target="_blank"
+              class="footer__social--link
+              link__hoover-effect
+              link__hoover-effect-white">
+              Resume
+            </a>
+          </div>
+          <div class="footer__copyright">
+            Copyright 
+            <i class="fa-regular fa-copyright"></i>
+            2026 Lavelle Ali
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
